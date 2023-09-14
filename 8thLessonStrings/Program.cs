@@ -34,7 +34,8 @@ class Program
         Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 
         Console.Write("All the duplicated characters in \"Hello, and hii, my name is Tom, the Trickster\" are: ");
-        Console.WriteLine(Duplicate("Hello, and hii, my nam is Tom, the Trickster"));
+        char[] duplicatedChars = Duplicate("Hello, and hii, my nam is Tom, the Trickster");
+        Console.WriteLine(string.Join(", ", duplicatedChars));
     }
     static bool Compare(string s1, string s2, bool TrimStrings)
     {
