@@ -34,7 +34,7 @@ class Program
         Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 
         Console.Write("All the duplicated characters in \"Hello, and hii, my name is Tom, the Trickster\" are: ");
-        char[] duplicatedChars = Duplicate("Hello, and hii, my nam is Tom, the Trickster");
+        char[] duplicatedChars = Duplicate("Hello, and hii, my name is Tom, the Trickster");
         Console.WriteLine(string.Join(", ", duplicatedChars));
     }
     static bool Compare(string s1, string s2, bool TrimStrings)
@@ -85,14 +85,12 @@ class Program
         s= s.ToLower();
         StringBuilder duplicatedChars = new StringBuilder();
         StringBuilder inputString = new StringBuilder(s);
-        for(int i = 0; i<inputString.Length; i++)
+        for(int i = 0; i<s.Length; i++)
         {
-            char c = inputString[i];
-            inputString.Remove(i, 1);
-            if(inputString.ToString().Contains(c) && !(char.IsWhiteSpace(c)))
+            char c = s[i];
+            if (inputString.Remove(0, 1).ToString().Contains(c) && !duplicatedChars.ToString().Contains(c) && !(char.IsWhiteSpace(c)))
             {
                 duplicatedChars.Append(c);
-                inputString.Replace(c, ' ');
             }
         }
  
