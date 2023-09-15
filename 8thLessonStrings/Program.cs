@@ -39,16 +39,24 @@ class Program
     }
     static bool Compare(string s1, string s2, bool TrimStrings)
     {
-        if(TrimStrings)
+        if (TrimStrings)
         {
-        s1 = s1.Trim();
-        s2 = s2.Trim();
+            s1 = s1.Trim();
+            s2 = s2.Trim();
+        }
+        if (s1.Length != s2.Length)
+        {
+            return false;
+        }
+        for (int i = 0; i < s1.Length; i++)
+        {
+            if (s1[i] != s2[i])
+            {
+                return false;
+            }
         }
 
-        // Чи є сенс порівнювати стрічки посимвольно, якщо варіант нижче працює? 
-
-        if(s1 == s2) return true;
-        return false;
+        return true;
     }
 
     static (int alphabeticChars, int digitChars, int specialChars) Analyze(string s)
